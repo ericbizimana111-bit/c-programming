@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell($env:PATH = \"C:\\\\Qt\\\\Tools\\\\mingw1310_64\\\\bin;C:\\\\Qt\\\\6.11.2\\\\mingw_64\\\\bin;\" + $env:PATH; $Q=\"C:\\\\Qt\\\\6.11.2\\\\mingw_64\"; $S=\"$env:TEMP\\\\claude\\\\c--Users-HP-Documents-All-Projects-c--\\\\23ee595c-6b8b-4de0-b573-13c16dc59ea6\\\\scratchpad\"; g++ -std=c++17 -Wall -Wextra \"$S\\\\calc_test.cpp\" -o \"$S\\\\calc_test.exe\" -I\"$Q\\\\include\" -I\"$Q\\\\include\\\\QtCore\" -I\"$Q\\\\include\\\\QtGui\" -I\"$Q\\\\include\\\\QtWidgets\" -L\"$Q\\\\lib\" -lQt6Widgets -lQt6Gui -lQt6Core 2>&1 | Select-Object -First 30; \"build exit: $LASTEXITCODE\"; & \"$S\\\\calc_test.exe\"; \"test exit: $LASTEXITCODE\")",
+      "PowerShell($env:PATH = 'C:\\\\Qt\\\\Tools\\\\mingw1310_64\\\\bin;C:\\\\Qt\\\\6.11.2\\\\mingw_64\\\\bin;' + $env:PATH; $Q = 'C:\\\\Qt\\\\6.11.2\\\\mingw_64'; New-Item -ItemType Directory -Force c++-work\\\\build | Out-Null; g++ -std=c++17 -O2 -Wall -mwindows c++-work\\\\calculator.cpp -o c++-work\\\\build\\\\calculator.exe -I\"$Q\\\\include\" -I\"$Q\\\\include\\\\QtCore\" -I\"$Q\\\\include\\\\QtGui\" -I\"$Q\\\\include\\\\QtWidgets\" -L\"$Q\\\\lib\" -lQt6EntryPoint -lQt6Widgets -lQt6Gui -lQt6Core -lshell32; \"build: $LASTEXITCODE\"; windeployqt --no-translations --no-system-d3d-compiler --no-opengl-sw c++-work\\\\build\\\\calculator.exe | Out-Null; \"deploy: $LASTEXITCODE\"; $p = Start-Process c++-work\\\\build\\\\calculator.exe -PassThru; Start-Sleep 3; \"running: $\\(-not $p.HasExited\\)\"; Stop-Process $p -ErrorAction SilentlyContinue)"
+    ]
+  }
+}
